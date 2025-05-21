@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { SquareComponent } from '../square/square.component';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-tictactoe',
-  imports: [],
+  imports: [SquareComponent, NgIf, NgFor],
   templateUrl: './tictactoe.component.html',
   styleUrl: './tictactoe.component.css',
 })

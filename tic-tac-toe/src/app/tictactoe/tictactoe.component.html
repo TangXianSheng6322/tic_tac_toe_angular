@@ -1,1 +1,13 @@
-<p>tictactoe works!</p>
+<h1>Current Player: {{ player }}</h1>
+<button (click)="newGame()">Start a new game</button>
+<h2 *ngIf="winner">The winner is:{{ winner }}</h2>
+
+<main>
+  <div>
+    <app-square
+      *ngFor="let val of squares; let i = index"
+      [value]="val"
+      (click)="makeAMove(i)"
+    ></app-square>
+  </div>
+</main>
