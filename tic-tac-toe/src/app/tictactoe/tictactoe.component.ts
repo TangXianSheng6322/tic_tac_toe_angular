@@ -11,7 +11,7 @@ import { NgFor, NgIf } from '@angular/common';
 export class TictactoeComponent implements OnInit {
   squares: string[] = [];
   xIsNext: boolean = true;
-  winner: string = '';
+  winner: string | null = '';
 
   newGame() {
     this.squares = Array(9).fill(null);
@@ -32,7 +32,7 @@ export class TictactoeComponent implements OnInit {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
     }
-    return this.caculateWinner();
+    this.winner = this.caculateWinner();
   }
 
   caculateWinner() {

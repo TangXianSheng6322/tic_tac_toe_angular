@@ -1,18 +1,22 @@
-<div class="flex items-center">
-  <h1 class="text-4xl">Current Player: {{ player }}</h1>
+<div class="flex flex-col">
+  <h1 class="text-4xl m-4 w-70 bg-orange-400 p-2 rounded-2xl">
+    Current Player: {{ player }}
+  </h1>
   <button
-    class="bg-green-300 w-40 h-[50px] font-semibold m-3"
+    class="bg-emerald-400 hover:bg-emerald-300 rounded-2xl w-40 h-[50px] p-2 font-semibold m-4 shadow-1xl"
     (click)="newGame()"
   >
     Start a new game
   </button>
-  <h2 *ngIf="winner">The winner is:{{ winner }}</h2>
+  <h2 id="winText" class="text-2xl m-4" *ngIf="winner">
+    The winner is: {{ winner }}
+  </h2>
 </div>
 
-<main class="flex items-center align-middle">
+<main class="flex justify-center m-8">
   <div class="grid grid-cols-3 gap-1">
     <app-square
-      class="bg-sky-100 w-[200px] h-[200px]"
+      class="bg-sky-100 rounded-2xl w-[200px] h-[200px]"
       *ngFor="let val of squares; let i = index"
       [value]="val"
       (click)="makeAMove(i)"

@@ -1,7 +1,13 @@
 <button class="bg-purple-600" *ngIf="!value">{{ value }}</button>
-<button class="bg-orange-500 h-full w-full text-7xl" *ngIf="value == 'X'">
+<button
+  class="bg-orange-500 h-full w-full text-7xl rounded-2xl"
+  *ngIf="value == 'X'"
+>
   {{ value }}
 </button>
-<button class="bg-emerald-500 h-full w-full text-7xl" *ngIf="value == 'O'">
+<button
+  class="bg-emerald-500 h-full w-full text-7xl rounded-2xl"
+  *ngIf="value == 'O'"
+>
   {{ value }}
 </button>
